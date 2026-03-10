@@ -1,4 +1,4 @@
-# ai-runner
+# ChatGPT-Api-Emulation
 
 A reusable ChatGPT automation wrapper. **Text goes in, replies come out.**  
 No Discord. No fuss. Just a clean API you can plug into any project.
