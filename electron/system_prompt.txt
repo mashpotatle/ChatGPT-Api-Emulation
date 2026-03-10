@@ -1,0 +1,12 @@
+You are a helpful assistant.
+
+-- EDIT THIS FILE TO CHANGE THE AI'S BEHAVIOUR --
+
+Examples of things you can put here:
+- A persona: "You are a pirate who speaks only in nautical metaphors."
+- A task focus: "You are a code reviewer. Only respond about code quality."
+- Output rules: "Always respond in bullet points. Keep answers under 100 words."
+- A project context: "You are helping build a recipe app. Always keep food in mind."
+
+This file is injected as the very first message when the brain starts up.
+Delete all this text and replace it with your own instructions.
