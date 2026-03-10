@@ -4,8 +4,8 @@
   "description": "A reusable ChatGPT automation runner — text in, reply out. No Discord required.",
   "main": "server.js",
   "scripts": {
-    "start": "node src/server.js",
-    "cli": "node src/cli.js"
+    "start": "node server.js",
+    "cli": "node cli.js"
   },
   "keywords": [],
   "author": "",
