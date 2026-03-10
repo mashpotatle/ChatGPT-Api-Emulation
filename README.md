@@ -22,15 +22,14 @@ Your Code
 ## Project Structure
 
 ```
-ai-runner/
-├── src/
-│   ├── server.js              ← HTTP API server (main entry point)
-│   ├── cli.js                 ← Command-line tool for quick queries
-│   ├── brain/
-│   │   └── brain.js           ← Spawns Electron, manages IPC connection
-│   └── electron/
-│       ├── main.js            ← Electron app that controls the ChatGPT window
-│       └── system_prompt.txt  ← Edit this to give the AI a persona or task
+brainpipe/
+├── brain/
+│   └── brain.js               ← Spawns Electron, manages IPC connection
+├── electron/
+│   ├── main.js                ← Electron app that controls the ChatGPT window
+│   └── system_prompt.txt      ← Edit this to give the AI a persona or task
+├── server.js                  ← HTTP API server (main entry point)
+├── cli.js                     ← Command-line tool for quick queries
 ├── package.json
 └── README.md
 ```
@@ -50,7 +49,7 @@ When you first run the app, a browser window will open at chat.openai.com.
 Log in once, and your session will be saved for future runs.
 
 ### 3. (Optional) Set a system prompt
-Edit `src/electron/system_prompt.txt` to give the AI specific instructions.  
+Edit `electron/system_prompt.txt` to give the AI specific instructions.  
 This is injected as the first message every time the brain starts.
 
 ---
@@ -94,7 +93,7 @@ curl http://localhost:3000/ready
 ### Option B: Command Line
 
 ```bash
-node src/cli.js "Write me a haiku about JavaScript"
+node cli.js "Write me a haiku about JavaScript"
 ```
 
 Output:
@@ -111,7 +110,7 @@ null !== undefined
 ## Adapting to Your Project
 
 ### Change the AI's personality
-Edit `src/electron/system_prompt.txt`. Examples:
+Edit `electron/system_prompt.txt`. Examples:
 
 ```
 You are a code review assistant. Only discuss code quality, bugs, and best practices.
@@ -125,7 +124,7 @@ Always suggest at least one unexpected twist.
 
 ### Use it from your own Node.js code
 ```js
-const { startBrain, sendPrompt } = require('./src/brain/brain');
+const { startBrain, sendPrompt } = require('./brain/brain');
 
 await startBrain();
 const result = await sendPrompt('Summarise this: ...');
